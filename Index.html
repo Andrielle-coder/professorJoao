@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <style>
+        body{text-align: center;margin: 0; background-color: #edfce5;display: flex;flex-direction: column;justify-content: center; height: 100vh;}
+        h1{font-family: fantasy;color: blueviolet;font-size: xx-large;}
+        #calculator{max-width: 360px;background-color: #af89ff;padding: 20px;border-radius: 10px;}
+        #display{width: 100%;height: 56px;font-size: 20px;text-align: right;margin: 0px 10px 0px 0px;padding: 20px;color: #000000;background-color: #ffffff;border-radius: none; box-sizing: border-box;}
+        button{width: calc(25% - 10px);height: 50px;font-size: 20px;margin: 10px 5px;border: none; border-radius: 5px; float: left;background-color: #e;}
+        .operator{color: #a679ff;}
+        #ac{color: #0e6600;}
+        .equal{width: calc(50% - 10px);}
+    </style>
+    <script>
+        const display = document.querySelector("#display"): //o querySlector retorna o primeiro elemento dentro do documento.
+        const buttons = document.querySelectorAll("button"): //Retorna uma lista de elementos presentes no documento.
+        buttons.forEach((btn) => {
+         btn.addEventsListener("click", () => {
+            if (btn.id === "=") {
+               display.value = eval(display.value);
+                } else if (btn.id === "ac") {
+                    display.value = "";
+                } else if (btn.id === "de") {
+                    display.value = display.value.slice(0, -1);}
+                    else {display.value += btn.id;}
+               } 
+            })
+    </script>
+</head>
+
+<body>
+    <h1>Calculadora</h1>
+    <div id="calculator"><input type="text" id="display" disabled>
+        <br>
+        <button id="ac" class="operator">AC</button>
+        <button id="de" class="operator">DEL</button>
+        <button id="."class="operator">.</button>
+        <button id="/" class="operator">/</button>
+        <br>
+        <button id="7">7</button>
+        <button id="8">8</button>
+        <button id="9">9</button>
+        <button id="*" class="operator">X</button>
+        <br>
+        <button id="4">4</button>
+        <button id="5">5</button>
+        <button id="6">6</button>
+        <button id="-" class="operator">-</button>
+        <br>
+        <button id="1">1</button>
+        <button id="2">2</button>
+        <button id="3">3</button>
+        <button id="ENTER" class="operator">+</button>
+        <br>
+        <button id="00">00</button>
+        <button id="0">0</button>
+        <button id="." class="operator">.</button>
+        <button id="ENTER" class="operator equal">=</button>
+    </div>
+</body>
+
+</html>
