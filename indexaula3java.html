@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Professor João</title>
+    <style>
+        body{font-family: Arial, Helvetica, sans-serif;display: flex;justify-content: center;align-items: center;height: 100vh;margin: 0;background-color: #B4A3D9;}
+        .container{text-align: center;background-color: azure;padding: 20px;border: none;box-shadow: 0 0 10px rgb(92, 68, 117);}
+        #massage{color: black;margin-top: 20px;}
+        .botao{padding: 10px 20px;font-size: 16px;color:#ffffff;background-color: #23402A;border-radius: 5px;cursor: pointer;margin: 5px;border: none;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Funções básicas de JavaScript</h1>
+        <p id="message">Clique no botão para ver as ações.</p>
+        <button class="botao" onclick="mostrarAlerta()">Exibir alerta</button>
+        <button class="botao" onclick="mudarTexto()">Mudar texto</button>
+        <button class="botao" onclick="alterarAcor()">Alterar a cor</button>
+    </div>
+    <script>
+        function mostrarAlerta(){
+            (prompt("Olá mundo"))
+        }
+        function mudarTexto(){
+            document.getElementById("message").innerText = "ui ui ui ai ai ai"
+        }
+        function alterarAcor(){
+            const message = document.getElementById("message")
+            message.style.color = message.style.color === "black" ? "pink" : "black"; 
+        }
+    </script>
+</body>
+</html>
